@@ -1,0 +1,153 @@
+/* Estilos del cuerpo del documento */
+body {
+   height: 100vh; /* Establece la altura del cuerpo al 100% del viewport */
+   display: grid; /* Utiliza el sistema de grid para el diseño */
+   grid-template-columns: auto; /* Define una columna automática */
+   grid-template-rows: 16% 1fr auto; /* Define las filas del grid con porcentajes y auto */
+   grid-template-areas: "header" "main" "pie"; /* Define áreas para el grid */
+}
+
+/* Estilos del encabezado */
+nav {
+   background-image: var(--bs-gradient); /* Establece una imagen de fondo para la navegación */
+}
+
+.navbar {
+   --bs-navbar-color: none; /* Define el color de la barra de navegación */
+   font-size: larger; /* Establece el tamaño de fuente más grande para la barra de navegación */
+   top: 0;
+   position: fixed;
+   width: 100%;
+   z-index: 1;
+}
+#nav_bread {
+   top: 5.5rem; /* Posiciona los elementos verticalmente */
+   position: absolute; /* Establece la posición absoluta */
+}
+header {
+   grid-area: header; /* Asigna el área de grid para el encabezado */
+}
+
+.logo {
+   height: 4rem; /* Establece la altura del logo */
+   border-radius: 100%; /* Aplica un borde redondeado al logo */
+}
+
+.navbar-nav .nav-link.active {
+   color: burlywood; /* Establece el color del enlace activo en la barra de navegación */
+}
+
+.options {
+   right: 5%; /* Posiciona los elementos a la derecha con un margen */
+   list-style-type: none; /* Elimina los estilos de la lista */
+   position: relative; /* Establece la posición relativa */
+}
+
+.options li {
+   position: relative; /* Establece la posición relativa para los elementos de la lista */
+}
+
+.options .submenu-left {
+   display: none; /* Oculta el submenú izquierdo */
+   position: absolute; /* Establece la posición absoluta */
+   right: 100%; /* Alinea el submenú a la derecha */
+   top: -7px; /* Ajusta la posición del submenú */
+   left: auto; /* Resetea la propiedad left */
+}
+
+li:hover > .submenu-left {
+   display: block; /* Muestra el submenú izquierdo cuando se hace hover */
+}
+
+.options li,
+.dropdown-menu li {
+   --bs-dropdown-link-hover-bg: #115200; /* Define el color de fondo al hacer hover en los enlaces de la lista */
+   --bs-dropdown-link-hover-color: white; /* Define el color del texto al hacer hover en los enlaces de la lista */
+}
+
+/* Estilos del contenido principal */
+main {
+   grid-area: main; /* Asigna el área de grid para el contenido principal */
+}
+
+/* Estilos para los elementos con id "categories" y "dish-list" */
+#categories,
+#dish-list {
+   width: 99%; /* Establece un ancho del 99% para estos elementos */
+}
+
+.row {
+   justify-content: center; /* Centra los elementos del grid horizontalmente */
+   gap: 2%; /* Establece el espacio entre los elementos */
+   row-gap: 1rem; /* Establece el espacio entre filas */
+   padding-top: 1%; /* Añade un padding superior */
+   text-align: center; /* Centra el texto */
+}
+
+.card img {
+   padding-top: 3%; /* Añade un padding superior a las imágenes dentro de las tarjetas */
+   height: 50%; /* Establece la altura de las imágenes dentro de las tarjetas */
+}
+
+#dishes_cards {
+   margin-bottom: 2%; /* Añade un margen inferior */
+}
+
+.containerInformation {
+   display: flex; /* Utiliza el modelo de caja flexible */
+   width: 99%; /* Establece un ancho del 99% */
+   justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+#card_dish {
+   width: 50%; /* Establece un ancho del 50% */
+}
+
+.name-dish,
+.name-restaurant {
+   padding: 10px; /* Añade relleno */
+   background-color: #115200; /* Establece el color de fondo */
+   color: white; /* Establece el color del texto */
+}
+
+.description {
+   text-align: justify; /* Justifica el texto */
+}
+
+.breadcrumb {
+   --bs-breadcrumb-item-active-color: #0a59d1; /* Define el color del elemento activo del breadcrumb */
+}
+
+.breadcrumb a {
+   color: black; /* Define el color de los enlaces del breadcrumb */
+}
+
+/* Estilos del pie de página */
+footer {
+   grid-area: pie; /* Asigna el área de grid para el pie de página */
+   background-image: var(--bs-gradient); /* Establece una imagen de fondo para el pie de página */
+}
+
+.enlaces a,
+i:hover {
+   color: rgb(5, 5, 31); /* Define el color de los enlaces en hover */
+}
+
+.social-media {
+   display: flex; /* Utiliza el modelo de caja flexible */
+   flex-direction: column; /* Establece la dirección de la columna */
+   flex-wrap: wrap; /* Permite que los elementos se ajusten al contenedor */
+   align-content: center; /* Centra los elementos verticalmente */
+}
+
+.icons {
+   display: flex; /* Utiliza el modelo de caja flexible */
+   justify-content: center; /* Centra los elementos horizontalmente */
+   gap: 10px; /* Establece el espacio entre los elementos */
+}
+
+.social-media i {
+   padding-right: 5%; /* Añade un relleno a la derecha */
+   font-size: 3em; /* Establece el tamaño de fuente */
+   color: rgb(243, 235, 235); /* Define el color del icono */
+}

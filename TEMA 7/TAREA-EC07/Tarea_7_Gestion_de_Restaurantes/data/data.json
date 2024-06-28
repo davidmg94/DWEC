@@ -1,0 +1,261 @@
+{
+  "allergens": [
+    {
+      "name": "Gluten",
+      "description": "Presente en derivados del trigo.",
+      "dishes": [
+        "Dorada gratinada con pan rallado sobre compota de tomate",
+        "Flan de huevo casero",
+        "Natillas caseras",
+        "Tarta de tres chocolates"
+      ]
+    },
+    {
+      "name": "Lactosa",
+      "description": "Presente en derivados de la leche.",
+      "dishes": [
+        "Solomillo de ternera con salsa roquefort",
+        "Flan de huevo casero",
+        "Natillas caseras",
+        "Tarta de tres chocolates",
+        "Arroz con leche casero"
+      ]
+    },
+    {
+      "name": "Cítricos",
+      "description": "Presente en derivados de los citricos.",
+      "dishes": [
+        "Salmón a la naranja",
+        "Pechuga de pollo al limón con espárragos"
+      ]
+    },
+    {
+      "name": "Sulfitos",
+      "description": "Presente en derivados del pescado y los mariscos.",
+      "dishes": [
+        "Dorada gratinada con pan rallado sobre compota de tomate",
+        "Lubina a la espalda",
+        "Salmón a la naranja",
+        "Sopa de pescado y marisco"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "Carnes",
+      "description": "Platos compuestos principalmente por carne",
+      "image": "/imagenes/categorias/carnes.jpg",
+      "dishes": [
+        "Pechuga de pollo al limón con espárragos",
+        "Pierna de cordero lechal al horno",
+        "Secreto de cerdo ibérico a la plancha",
+        "Solomillo de ternera con salsa roquefort"
+      ]
+    },
+    {
+      "name": "Pescados",
+      "description": "Platos compuestos principalmente por pescados",
+      "image": "/imagenes/categorias/pescados.jpg",
+      "dishes": [
+        "Dorada gratinada con pan rallado sobre compota de tomate",
+        "Lubina a la espalda",
+        "Salmón a la naranja",
+        "Sopa de pescado y marisco"
+      ]
+    },
+    {
+      "name": "Postres",
+      "description": "Postres artesanales de la casa",
+      "image": "/imagenes/categorias/postres.jpg",
+      "dishes": [
+        "Arroz con leche casero",
+        "Flan de huevo casero",
+        "Natillas caseras",
+        "Tarta de tres chocolates"
+      ]
+    }
+  ],
+  "dishes": [
+    {
+      "name": "Pechuga de pollo al limón con espárragos",
+      "description": "La pechuga de pollo al limón con espárragos es una opción ligera y sabrosa que combina la jugosidad y versatilidad del pollo con el refrescante sabor...",
+      "image": "/imagenes/Platos/pollo.jpg",
+      "ingredients": [
+        "Pollo",
+        "Limón",
+        "Espárragos"
+      ]
+    },
+    {
+      "name": "Pierna de cordero lechal al horno",
+      "description": "La Pierna de cordero asado es un plato clásico y reconfortante que ofrece una experiencia culinaria inigualable...",
+      "image": "/imagenes/Platos/cordero.jpg",
+      "ingredients": [
+        "Cordero",
+        "Patata"
+      ]
+    },
+    {
+      "name": "Secreto de cerdo ibérico a la plancha",
+      "description": "El secreto ibérico a la plancha es un plato que resalta la calidad y el sabor único de esta pieza de cerdo tan apreciada...",
+      "image": "/imagenes/Platos/secreto.jpg",
+      "ingredients": [
+        "Cerdo",
+        "Patata",
+        "Tomate"
+      ]
+    },
+    {
+      "name": "Solomillo de ternera con salsa roquefort",
+      "description": "El solomillo de ternera con salsa Roquefort es un plato exquisito que combina la ternura y jugosidad del solomillo de ternera con...",
+      "image": "/imagenes/Platos/solomillo.jpg",
+      "ingredients": [
+        "Ternera",
+        "Salsa roquefort",
+        "Pimiento",
+        "Patata"
+      ]
+    },
+    {
+      "name": "Dorada gratinada con pan rallado sobre compota de tomate",
+      "description": "La dorada gratinada con pan rallado sobre compota de tomate es una deliciosa combinación de sabores y texturas....",
+      "image": "/imagenes/Platos/dorada.jpg",
+      "ingredients": [
+        "Dorada",
+        "Tomate",
+        "Patata"
+      ]
+    },
+    {
+      "name": "Lubina a la espalda",
+      "description": "La lubina a la espalda es un plato clásico de la cocina mediterránea que destaca por su sencillez y sabor fresco...",
+      "image": "/imagenes/Platos/lubina.jpg",
+      "ingredients": [
+        "Lubina",
+        "Patatas"
+      ]
+    },
+    {
+      "name": "Salmón a la naranja",
+      "description": "El salmón a la naranja es una deliciosa combinación de sabores donde el salmón fresco se cocina a la perfección y se cubre con una salsa cítrica de naranja que realza su sabor...",
+      "image": "/imagenes/Platos/salmon.jpg",
+      "ingredients": [
+        "Salmón",
+        "Naranja",
+        "Patata"
+      ]
+    },
+    {
+      "name": "Sopa de pescado y marisco",
+      "description": "La sopa de pescado es un reconfortante y aromático plato que captura la esencia del mar...",
+      "image": "/imagenes/Platos/sopa_pescado.jpg",
+      "ingredients": [
+        "Gambas",
+        "Almejas",
+        "Rape",
+        "Mejillones"
+      ]
+    },
+    {
+      "name": "Arroz con leche casero",
+      "description": "El arroz con leche es un postre tradicional que se prepara a base de arroz, leche, azúcar y canela....",
+      "image": "/imagenes/Platos/arroz.jpg",
+      "ingredients": [
+        "Arroz",
+        "Leche",
+        "Canela"
+      ]
+    },
+    {
+      "name": "Flan de huevo casero",
+      "description": "El flan de huevo es un postre clásico y delicioso que se prepara con ingredientes simples como huevos, leche y azúcar.",
+      "image": "/imagenes/Platos/flan.png",
+      "ingredients": [
+        "Huevo",
+        "Leche",
+        "Azúcar",
+        "Vainilla"
+      ]
+    },
+    {
+      "name": "Natillas caseras",
+      "description": "Las natillas caseras son un postre clásico y reconfortante que se prepara con ingredientes simples como leche, huevos, azúcar y vainilla.",
+      "ingredients": [
+        "Leche",
+        "Vainilla",
+        "Canela",
+        "Galleta"
+      ],
+      "image": "/imagenes/Platos/natillas.png"
+    },
+    {
+      "name": "Tarta de tres chocolates",
+      "description": "La tarta de tres chocolates es un postre irresistible que combina tres capas de chocolate de diferentes intensidades en una base de galleta....",
+      "image": "/imagenes/Platos/tarta.jpg",
+      "ingredients": [
+        "Chocolate Negro",
+        "Chocolate con leche",
+        "Chocolate Blanco",
+        "Galleta"
+      ]
+    }
+  ],
+  "menus": [
+    {
+      "name": "Menu Carnes",
+      "description": "Menu compuesto por platos cuyo ingrediente principal es la carne.",
+      "dishes": [
+        "Pechuga de pollo al limón con espárragos",
+        "Pierna de cordero lechal al horno",
+        "Arroz con leche casero"
+      ]
+    },
+    {
+      "name": "Menu Pescados",
+      "description": "Menu compuesto por platos cuyo ingrediente principal es el pescado.",
+      "dishes": [
+        "Lubina a la espalda",
+        "Salmón a la naranja",
+        "Tarta de tres chocolates"
+      ]
+    },
+    {
+      "name": "Menu Variado",
+      "description": "Menu compuesto por platos variados.",
+      "dishes": [
+        "Sopa de pescado y marisco",
+        "Solomillo de ternera con salsa roquefort",
+        "Flan de huevo casero"
+      ]
+    }
+  ],
+  "restaurants": [
+    {
+      "name": "Asador los Pucheros",
+      "description": "El Asador los Pucheros es un restaurante especializado en asaduras...",
+      "image": "/imagenes/Restaurantes/pucheros.jpg",
+      "location": {
+        "latitude": "39.01184176129217",
+        "longitude": "-4.213974019610349"
+      }
+    },
+    {
+      "name": "El Otro Sitio",
+      "description": "El Otro Sitio, es un restaurante que destaca por su versatilidad y su amplio abanico de opciones culinarias.",
+      "image": "/imagenes/Restaurantes/otroSitio.jpg",
+      "location": {
+        "latitude": "39.03370461758248",
+        "longitude": "-4.172593589548724"
+      }
+    },
+    {
+      "name": "Hostal-Restaurante Cuatro Caminos",
+      "description": "El Hostal-Restaurante Cuatro Caminos es un restaurante que rinde homenaje a la rica tradición gastronómica española...",
+      "image": "/imagenes/Restaurantes/cuatroCaminos.jpg",
+      "location": {
+        "latitude": "39.033056879350404",
+        "longitude": "-4.1816563472194055"
+      }
+    }
+  ]
+}

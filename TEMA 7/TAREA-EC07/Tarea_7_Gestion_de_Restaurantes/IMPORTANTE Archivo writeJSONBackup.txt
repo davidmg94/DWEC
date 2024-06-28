@@ -1,0 +1,1 @@
+El archivo writeJSONBackup.php debe ir en la carpeta htdocs para que funcione con XAMPP

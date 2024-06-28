@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="style.css" />
+      <title>Tarea02</title>
+   </head>
+
+   <body>
+         <h1>Ejercicio 3</h1>
+         <label for="num1">Numero 1</label>
+         <input type="number" id="num1" /><br />
+         <label for="num2">Numero 2</label>
+         <input type="number" id="num2" /><br />
+
+         <label for="operacion">Operación</label>
+         <select id="operacion">
+            <option value="suma">Suma</option>
+            <option value="resta">Resta</option>
+            <option value="mult">Multiplicacion</option>
+            <option value="div">Division</option>
+            <option value="sob">Sobrante</option>
+         </select>
+
+         <br /><br />
+         <label for="resultado">Resultado</label>
+         <input type="text" id="resultado" />
+         <button onclick="calcular()">Calcular</button>
+         <script src="ejercicio3.js"></script>
+   </body>
+</html>

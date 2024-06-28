@@ -1,0 +1,1 @@
+Los backUps se crearan en una carpeta llamada backupTarea7 dentro de la carpeta htdocs.
