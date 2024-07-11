@@ -22,13 +22,12 @@ class RestaurantsManager {
       this._dishes = [];
       this._menus = [];
       this._restaurants = [];
-      // this._allObjects = [];
       this._allObjects = {
-         Allergens: this._allergens,
-         Categories: this._category,
-         Dishes: this._dishes,
-         Menus: this._menus,
-         Restaurants: this._restaurants,
+         allergens: this._allergens,
+         categories: this._category,
+         dishes: this._dishes,
+         menus: this._menus,
+         restaurants: this._restaurants,
       };
 
       //Hacemos iterables los arrays.
@@ -299,7 +298,6 @@ class RestaurantsManager {
    addMenu(...menus) {
       for (const menu of menus) {
          this.#addObject(this._menus, menu, Menu);
-         // this._allObjects.push(menu);
       }
       return this;
    }
@@ -314,7 +312,6 @@ class RestaurantsManager {
    addAllergen(...allergens) {
       for (const allergen of allergens) {
          this.#addObject(this._allergens, allergen, Allergen);
-         // this._allObjects.push(allergen);
       }
       return this;
    }
@@ -351,7 +348,6 @@ class RestaurantsManager {
          if (position === -1) {
             // Si el plato no existe en la lista
             this._dishes.push(dish); // Agrega el plato a la lista
-            // this._allObjects.push(dish);
             this._dishes.sort(this.#sortObjects); // Ordena la lista después de agregar el plato
          } else {
             // Si el plato ya existe en la lista, lanza una excepción
@@ -414,7 +410,6 @@ class RestaurantsManager {
          const position = this.#getRestaurantPosition(restaurant);
          if (position === -1) {
             this._restaurants.push(restaurant);
-            // this._allObjects.push(restaurant);
             this._restaurants.sort(this.#sortObjects);
          } else {
             throw new ElementExistsYetException(`${restaurant._name} exists yet.`);
@@ -815,15 +810,7 @@ class RestaurantsManager {
    getAllObjects() {
       return this._allObjects;
    }
-   //    getAllObjects() {
-   //       return {
-   //           categories: this.getCategories(),
-   //           allergens: this.getAllergens(),
-   //           dishes: this.getDishes(),
-   //           menus: this.getMenus(),
-   //           restaurants: this.getRestaurants(),
-   //       };
-   //   }
+
    // Función asíncrona que realiza la copia de seguridad (backUp).
    async backup() {
       try {

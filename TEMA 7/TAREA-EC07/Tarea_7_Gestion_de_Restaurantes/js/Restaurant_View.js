@@ -403,44 +403,46 @@ class RestaurantView {
 
    /**Método encargado de mostrar platos de forma aleatoria en la zona central de la web */
    showDishesRandom(dishes) {
-      //Convertimos en array el conjunto de platos.
+      // Convertimos en array el conjunto de platos.
       const dish = Array.from(dishes);
-
-      //Creamos un contenedor para mostrar los platos.
+  
+      // Creamos un contenedor para mostrar los platos.
       const div = document.createElement("div");
       div.id = "dishes_cards";
       div.classList.add("row");
-
-      //Insertamos el título de los platos.
+  
+      // Insertamos el título de los platos.
       div.insertAdjacentHTML("beforeend", `<h1>Platos</h1>`);
-
-      //Bucle for para mostrar tres platos de manera aleatoria.
+  
+      // Bucle for para mostrar tres platos de manera aleatoria.
       for (let index = 0; index < 3; index++) {
-         const dish_random = dish[Math.floor(Math.random() * dish.length)];
-         const ingredientsList = Array.isArray(dish_random.ingredients) ? dish_random.ingredients.join(", ") : dish_random.ingredients;
-         //Si disponemos de un plato, lo guardamos en una variable auxiliar para eliminarlo del array, de esta manera no se repetiran los platos.
-         if (dish_random) {
-            const aux_random = dish_random;
-            dish.splice(dish.indexOf(aux_random), 1);
-         }
-
-         //Insertamos los platos en el contenedor.
-         div.insertAdjacentHTML(
-            "beforeend",
-
-            `<div class="card" id="dishes_cards" style="width: 19rem; height:25rem;">
-               <img src="${dish_random.image}" class="card-img-top" alt="${dish_random.name}">
-               <div class="card-body d-flex flex-column justify-content-between">
-                  <h5 class="card-title">${dish_random.name}</h5>
-                  <p class="card-text"><strong>Ingredientes:</strong> ${ingredientsList}</p>
-                  <a href="#" class="btn btn-success" data-dish = "${dish_random.name}">Detalles</a>
-               </div>
-            </div>`
-         );
-
-         this.categories.append(div);
+          if (dish.length === 0) break; // Salir del bucle si no quedan platos
+  
+          const dish_random = dish[Math.floor(Math.random() * dish.length)];
+          if (!dish_random) continue; // Saltar la iteración si dish_random es undefined
+  
+          const ingredientsList = Array.isArray(dish_random.ingredients) ? dish_random.ingredients.join(", ") : dish_random.ingredients;
+          // Si disponemos de un plato, lo guardamos en una variable auxiliar para eliminarlo del array, de esta manera no se repetirán los platos.
+          const aux_random = dish_random;
+          dish.splice(dish.indexOf(aux_random), 1);
+  
+          // Insertamos los platos en el contenedor.
+          div.insertAdjacentHTML(
+              "beforeend",
+              `<div class="card" id="dishes_cards" style="width: 19rem; height:25rem;">
+                 <img src="${dish_random.image}" class="card-img-top" alt="${dish_random.name}">
+                 <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title">${dish_random.name}</h5>
+                    <p class="card-text"><strong>Ingredientes:</strong> ${ingredientsList}</p>
+                    <a href="#" class="btn btn-success" data-dish = "${dish_random.name}">Detalles</a>
+                 </div>
+              </div>`
+          );
       }
-   }
+  
+      this.categories.append(div);
+  }
+  
 
    /**Método que se encarga de mostrar platos en la zona central de la web */
    showDishes(dishes, title, elem) {
@@ -1689,21 +1691,28 @@ class RestaurantView {
 
    /**Bind para enlazar los enlaces de los cards de las categorías. */
    bindDishesCategory(handler) {
-      //Obtenemos los cards que componen las categorías.
+      // Obtenemos los cards que componen las categorías.
       const categoryCards = document.getElementById("category_cards");
-
-      //Obtenemos los enlaces de los cards.
-      const links = categoryCards.querySelectorAll("a");
-
-      //Recorremos los enlaces y enlazamos el manejador de eventos.
-      for (const link of links) {
-         //Añadimos un evento de click a cada enlace.
-         link.addEventListener("click", (event) => {
-            //Llamamos al manejador d eventos, que recibe el objeto en donde se ha hecho click mediante el atributo personalizado.
-            handler(event.currentTarget.dataset.category);
-         });
+  
+      // Verificamos si categoryCards existe
+      if (!categoryCards) {
+          console.error("El elemento con ID 'category_cards' no se encontró.");
+          return;
       }
-   }
+  
+      // Obtenemos los enlaces de los cards.
+      const links = categoryCards.querySelectorAll("a");
+  
+      // Recorremos los enlaces y enlazamos el manejador de eventos.
+      for (const link of links) {
+          // Añadimos un evento de click a cada enlace.
+          link.addEventListener("click", (event) => {
+              // Llamamos al manejador de eventos, que recibe el objeto en donde se ha hecho click mediante el atributo personalizado.
+              handler(event.currentTarget.dataset.category);
+          });
+      }
+  }
+  
    /** Método para enlazar los enlaces del menú desplegable de categorías. */
    bindDishesCategoryInMenu(handler) {
       // Obtenemos el elemento del menú de categorías

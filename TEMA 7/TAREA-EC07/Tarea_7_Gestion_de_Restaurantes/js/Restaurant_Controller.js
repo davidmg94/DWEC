@@ -124,6 +124,25 @@ class RestaurantController {
     * se llama a los métodos bind de la vista para enlazar los eventos con los manejadores de eventos.
     */
    onLoad = async () => {
+      
+
+      await this[LOAD_MANAGER_OBJECTS]();
+
+      const iteratorCategories = this[MODEL].categories;
+      //Llamada al método showCategories que recibe un array para mostrar las categorías en la zona central.
+      this[VIEW].showCategories(iteratorCategories);
+      //Llamas a los métodos onAddCategory y onAddOptions para establecer los despegables.
+      this.onAddCategory();
+      this.onAddOptions();
+
+      const iteratorDishes = this[MODEL].dishes;
+      //Llamada al método showDishesRandom que recibe un array para mostrar los platos de forma aleatoria en la zona central.
+      this[VIEW].showDishesRandom(iteratorDishes);
+
+      //Llamada al método bindDishesCategory que recibe un manejador de eventos para enlazar los eventos con el manejador de eventos.
+      this[VIEW].bindDishesCategory(this.handleDishesCategoryList);
+      //Llamada al método bindDishInformation que recibe un manejador de eventos para enlazar los eventos con el manejador de eventos.
+      this[VIEW].bindDishInformation(this.handleDishesInformation);
       //Detectar si existe la cookie de aceptación del mensaje.
       if (getCookie("acceptedCookieMessage") !== true) {
          this[VIEW].showCookiesMessage();
@@ -151,24 +170,6 @@ class RestaurantController {
          this[VIEW].showIdentificationLink();
          this[VIEW].bindIdentificationLink(this.handleLoginForm);
       }
-
-      await this[LOAD_MANAGER_OBJECTS]();
-
-      const iteratorCategories = this[MODEL].categories;
-      //Llamada al método showCategories que recibe un array para mostrar las categorías en la zona central.
-      this[VIEW].showCategories(iteratorCategories);
-      //Llamas a los métodos onAddCategory y onAddOptions para establecer los despegables.
-      this.onAddCategory();
-      this.onAddOptions();
-
-      const iteratorDishes = this[MODEL].dishes;
-      //Llamada al método showDishesRandom que recibe un array para mostrar los platos de forma aleatoria en la zona central.
-      this[VIEW].showDishesRandom(iteratorDishes);
-
-      //Llamada al método bindDishesCategory que recibe un manejador de eventos para enlazar los eventos con el manejador de eventos.
-      this[VIEW].bindDishesCategory(this.handleDishesCategoryList);
-      //Llamada al método bindDishInformation que recibe un manejador de eventos para enlazar los eventos con el manejador de eventos.
-      this[VIEW].bindDishInformation(this.handleDishesInformation);
    };
 
    /**Método para mostrar el contenido si se ha autenticado el usuario.
