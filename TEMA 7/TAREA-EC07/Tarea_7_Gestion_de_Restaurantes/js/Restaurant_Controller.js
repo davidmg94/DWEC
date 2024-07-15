@@ -108,7 +108,6 @@ class RestaurantController {
          // Muestra en la consola los objetos obtenidos.
          console.log("Objetos a respaldar:", allObjects);
          // Generar el JSON de salida con la estructura deseada.
-       
 
          // console.log("JSON de salida:", JSON.stringify(outputJSON, null, 2));
       } catch (error) {
@@ -124,8 +123,6 @@ class RestaurantController {
     * se llama a los métodos bind de la vista para enlazar los eventos con los manejadores de eventos.
     */
    onLoad = async () => {
-      
-
       await this[LOAD_MANAGER_OBJECTS]();
 
       const iteratorCategories = this[MODEL].categories;
@@ -831,26 +828,30 @@ class RestaurantController {
    /**Manejador que se va encargar de guardar los platos favoritos. */
    handleSaveFavouriteDishes = (name) => {
       try {
-         const card = document.getElementById(name);
-         const p = document.createElement("p");
-
-         if (localStorage.getItem(name) === null) {
-            localStorage.setItem(name, name);
-            p.innerHTML = "Guardado";
-            card.append(p);
-         } else {
-            p.innerHTML = "Ya guardado";
-            card.append(p);
-         }
-
-         for (let i = 0; i < localStorage.length; i++) {
-            const dish = localStorage.key(i);
-            console.log(localStorage.getItem(dish));
-         }
+          const card = document.getElementById(name);
+          let p = card.querySelector("span");
+          if (!p) {
+              p = document.createElement("span");
+          }
+  
+          if (localStorage.getItem(name) === null) {
+              localStorage.setItem(name, name);
+              p.textContent = "Guardado";
+          } else {
+              p.textContent = "Ya guardado";
+          }
+  
+          card.append(p);
+  
+          for (let i = 0; i < localStorage.length; i++) {
+              const dish = localStorage.key(i);
+              console.log(localStorage.getItem(dish));
+          }
       } catch (exception) {
-         console.error("Error al guardar los platos favoritos", exception);
+          console.error("Error al guardar los platos favoritos", exception);
       }
-   };
+  };
+  
 
    /**Manejador que se va a encargar de mostrar los platos guardados en favoritos. */
    handleConsultFavouriteDishes = () => {

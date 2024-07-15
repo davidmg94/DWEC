@@ -142,7 +142,7 @@ class RestaurantView {
          ingredientList = Array.isArray(dish.ingredients) ? dish.ingredients.join(", ") : dish.ingredients;
          div.insertAdjacentHTML(
             "beforeend",
-            `<div class="card" id="${dish.name}"  style="width: 19rem; height:25rem;">
+            `<div class="card" id="${dish.name}"  style="width: 19rem; ">
                <img src="${dish.image}" class="card-img-top" alt="${dish.name}">
                <div class="card-body d-flex flex-column justify-content-between">
                <h5 class="card-title">${dish.name}</h5>
@@ -186,7 +186,7 @@ class RestaurantView {
 
          div.insertAdjacentHTML(
             "beforeend",
-            `<div class="card" id="${dish.name}"  style="width: 19rem; height:25rem;">
+            `<div class="card" id="${dish.name}"  style="width: 19rem; ">
                <img src="${dish.image}" class="card-img-top" alt="${dish.name}">
                <div class="card-body d-flex flex-column justify-content-between">
                   <h5 class="card-title">${dish.name}</h5>
@@ -344,7 +344,7 @@ class RestaurantView {
          container.insertAdjacentHTML(
             "beforeend",
 
-            `<div class="card" style="width: 19rem; height:25rem;">
+            `<div class="card" style="width: 19rem; ">
                <img src="${category.image}" class="card-img-top" alt="${category.name}">
                <div class="card-body d-flex flex-column justify-content-between">
                   <h5 class="card-title">${category.name}</h5>
@@ -429,7 +429,7 @@ class RestaurantView {
           // Insertamos los platos en el contenedor.
           div.insertAdjacentHTML(
               "beforeend",
-              `<div class="card" id="dishes_cards" style="width: 19rem; height:25rem;">
+              `<div class="card" id="dishes_cards" style="width: 19rem; ">
                  <img src="${dish_random.image}" class="card-img-top" alt="${dish_random.name}">
                  <div class="card-body d-flex flex-column justify-content-between">
                     <h5 class="card-title">${dish_random.name}</h5>
@@ -916,7 +916,7 @@ class RestaurantView {
 
          div.insertAdjacentHTML(
             "beforeend",
-            `<div class="card" id="${dish.name}"  style="width: 19rem; height:25rem;">
+            `<div class="card" id="${dish.name}"  style="width: 19rem; ">
                <img src="${dish.image}" class="card-img-top" alt="${dish.name}">
                <div class="card-body d-flex flex-column justify-content-between">
                   <h5 class="card-title">${dish.name}</h5>
@@ -2063,6 +2063,7 @@ class RestaurantView {
       const linkGuardar = dishesCards.querySelectorAll(".btn.btn-primary");
       for (const link of linkGuardar) {
          link.addEventListener("click", (event) => {
+            event.preventDefault(); 
             handler(event.currentTarget.dataset.dish);
          });
       }
